@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Mulish',sans-serif;
+
+
+}
+html{
+    font-size: 72.5%;
+}
+
+.header_nav {
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%; /* Adjust padding here if needed */
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    filter: drop-shadow(10px);
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000000;
+	overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    padding: 35px 10%;
+}
+
+main.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+}
+/* Add top margin to the EDUCATION and EXPERIENCE titles only */
+.col:nth-child(1) header.title, /* Targets EDUCATION */
+.col:nth-child(2) header.title { /* Targets EXPERIENCE */
+    margin-top: 50px; /* Adjust this value as needed */
+}
+
+.col-full {
+    grid-column: span 2;
+}
+
+.col header.title {
+    color: #66fcf1;
+    padding: 0px 0px 20px 30px;
+}
+
+.col-full header.title {
+    font-family: 'Mulish',sans-serif;
+    color: #66fcf1;
+    padding: 0px 0px 20px 30px;
+}
+
+.col .contents,
+.col-full .contents {
+    padding: 0px 30px;
+    border-left: 2px solid #828282;
+}
+
+.col .contents .box,
+.col-full .contents .box {
+    position: relative;
+    padding: 20px;
+    border: 1px solid #787777;
+    background-color: #383837;
+    cursor: pointer;
+    transition: all 0.4s;
+    margin-bottom: 20px;
+}
+
+.col .contents .box:hover,
+.col-full .contents .box:hover {
+    box-shadow: 0px 3px 12px 0px #ccc;
+    border: 1px solid transparent;
+}
+
+.col .contents .box::before,
+.col-full .contents .box::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    right: calc(100% + 22px);
+    top: 0;
+    background-color: #66fcf1;
+    border: 2px solid white;
+}
+
+.box h4 {
+    position: relative;
+    color: #66fcf1;
+}
+
+.box h3 {
+    font-size: 19px;
+    padding: 10px 0px 6px;
+    font-family: 'Mulish',sans-serif;
+    color: #ffffff;
+}
+
+.box p {
+    line-height: 1.2;
+    color: #cbcecc;
+    font-size: 17px;
+}
+
+@media(max-width: 768px) {
+    main.row {
+        grid-template-columns: 1fr;
+    }
+
+    .row .col:nth-child(2) {
+        margin-top: 30px;
+    }
+}
+nav a {
+    font-size: 1.8rem; /* Adjust font-size as desired */
+    color: #ffffff;
+    margin-left: 4rem; /* Adjust margin if needed */
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+    color: #66fcf1;
+    border-bottom: 3px solid #66fcf1;
+}
+
+@media(max-width:995px){
+    nav{
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid #66fcf1;
+        border-bottom: 3px solid #66fcf1;
+        border-bottom-left-radius: 2rem;
+        padding: 1rem solid;
+        background-color: #ffffff;
+        border-top: 0.1rem solid rgb(252, 249, 249);
+    }
+
+    nav.active{
+        display: block;
+    }
+
+    nav a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    nav a:hover,
+    nav a.active{
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #66fcf1;
+    }
+}
