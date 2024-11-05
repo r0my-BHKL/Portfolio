@@ -1,6 +1,7 @@
 /*starting form*/
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Rubik:wght@396&display=swap');
 /*all element*/
 *{
     margin: 0;
@@ -69,36 +70,56 @@ nav a.active {
     border-bottom: 3px solid #66fcf1;
 }
 
-@media(max-width:995px){
-    nav{
-        position: absolute;
-        display: none;
+@media(max-width: 995px) {
+    /* Styling the nav */
+    nav {
+        position: fixed;
         top: 0;
-        right: 0;
-        width: 40%;
+        right: -100%; /* Initially hide it off-screen */
+        width: 60%; /* Adjusted width for better visibility */
+        height: 100vh; /* Full-screen height for better interaction */
         border-left: 3px solid #66fcf1;
-        border-bottom: 3px solid #66fcf1;
-        border-bottom-left-radius: 2rem;
-        padding: 1rem solid;
-        background-color: #ffffff;
-        border-top: 0.1rem solid rgb(252, 249, 249);
+        padding: 2rem 1rem;
+        background-color: #000000; /* Background color for better contrast */
+        transition: right 0.3s ease-in-out; /* Smooth slide-in effect */
+        z-index: 1000; /* Ensure it appears on top */
     }
 
-    nav.active{
-        display: block;
+    /* Display the nav when active */
+    nav.active {
+        right: 0; /* Slide into view */
     }
 
-    nav a{
+    /* Styling for links */
+    nav a {
         display: block;
         font-size: 2rem;
-        margin: 3rem 0;
+        margin: 2rem 0;
+        color: #ffffff;
+        text-align: left;
+        padding: 0.5rem 1rem;
+        transition: background-color 0.3s, transform 0.3s;
+        border-radius: 0.5rem;
     }
 
+    /* Link hover effect */
     nav a:hover,
-    nav a.active{
-        padding: 1rem;
-        border-radius: 0.5rem;
-        border-bottom: 0.5rem solid #66fcf1;
+    nav a.active {
+        /*background-color: #66fcf1;*/
+        color: #66fcf1;
+        transform: translateX(10px);
+    }
+
+    /* Optional button or icon for toggling menu */
+    .menu-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        font-size: 3rem;
+        color: #66fcf1;
+        background-color: #000000;
+        cursor: pointer;
+        z-index: 1100;
     }
 }
 
@@ -119,6 +140,7 @@ section{
     font-size: 6rem;
     font-weight: 700;
     line-height: 1.3;
+    font-family: 'Rubik',sans-serif;
 }
 
 span{
